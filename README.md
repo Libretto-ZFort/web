@@ -1,38 +1,53 @@
-# Workshop (CG - S2024/032 Team Building)
+# Libretto Web
+Libretto Web is a modern, real-time chat application designed to provide users with an intuitive and interactive communication platform.
 
-## Overview
+# How to Start
 
-This project contains proof of work with supabase auth, supabase subscriptions. Utilize react framework and all necessary libraries to make it work
-User can authorize with email and password.
-User can create tasks, update tasks, delete tasks. Tasks on board will be auto-synced between all authenticated customers
-User can update and delete only own tasks. To edit title or description user need to double-click on title or description
-Users can write messages to the chat. Be default, if there any messages, user will see last 50 messages in the chat.
+1. Clone this project.
+2. Run ``` npm install ``` to install all necessary dependencies for the project.
+3. Launch the application with ``` npm start ```.
+4. Access the app at ``` http://localhost:3000 ``` and immerse yourself in collaborative efficiency.
 
-## How to start
+# Configuration
 
-1. Clone this project
-1. Run `npm i`
-1. Run `npm start`
-1. Open [http://localhost:3000](http://localhost:3000)
+Create a ```.env``` file in the root directory and add ```REACT_APP_SUPABASE_DOMAIN```, ```REACT_APP_SUPABASE_KEY``` and ```REACT_APP_BACKEND_URL```.
 
-## Summary
+```js
+export const BASE_URL_API = '< YOUR BASE API URL HERE >';
+export const VITE_SUPABASE_KEY = '< YOUR SUPABASE KEY HERE >';
+export const VITE_SUPABASE_URL = '< YOUR SUPABASE URL HERE >';
+```
 
-Technical stack for this project:
+# Summary
 
-- React - base front-end framework
-- supabase - framework that allow to create almost whole project without backend
-- shadcn (with radix ui) - ui framework that allow to build simple and clean UI interfaces pretty fast.
-- tailwind - css framework for fast prototyping
-- luxon - library for handling and formatting dates
-- react-hook-form - good forms framework that allow to create forms easy and fast
-- zod - allow to make validations for data
-- @hookform/resolvers - connect react-hook-form and zod
-- react-hot-toast - simple toasts for app
-- axios - "fetch" on steroids, have a lot of configurations, easy syntax
-- react-query - great library for managing server state, loading and error state for each request
+Our technical stack is curated to provide a seamless, full-stack development experience:
 
-## Supabase DB schema
+1. React: The foundation of our front-end, React brings to life our user interface with agility and sophistication.
+2. Supabase: A versatile framework that lays the groundwork for our backend processes, including database and real-time functionality, without the need for a separate backend service.
+3. Shadcn with Radix UI: Our chosen UI framework, designed for rapid, clean, and straightforward UI construction.
+4. Tailwind CSS: This utility-first CSS framework empowers us to prototype with speed and efficiency.
+5. Luxon: A library that elegantly handles and formats dates.
+6. React Hook Form: This framework simplifies form creation, making it a breeze to set up and manage form states.
+7. Zod: A schema definition library that validates data with precision.
+8. @hookform/resolvers: A bridge that unites React Hook Form and Zod for streamlined form validation.
+9. React Hot Toast: Adds a sprinkle of engagement with toasty notifications.
+10. Axios: A powerful HTTP client that enriches the 'fetch' API with an array of configuration options and an easy-to-use syntax.
+11. React Query: An outstanding library that manages server state, automatic refetching, and provides hooks for handling loading and error states seamlessly.
+
+# Supabase DB Schema
+
+Our database is structured to support the intricate features of our application, with a schema that facilitates real-time updates and user-specific task management.
+Design Decisions
 
 ![alt text](<images/CleanShot 2024-03-01 at 19.49.42.png>)
 ![alt text](<images/CleanShot 2024-03-01 at 19.50.29.png>)
 ![alt text](<images/CleanShot 2024-03-01 at 19.51.07.png>)
+
+# Design Decisions
+
+The project structure is intentionally designed to promote clean code and ease of navigation:
+
+1. Common: Houses UI components like buttons, cards, inputs, and more, ensuring a consistent design language across the application.
+2. Lib: Contains core functionalities such as Axios for HTTP requests and a custom Supabase client.
+3. Modules: The application's features are modularized, with auth managing authentication and chat dedicated to messaging functionalities, each with their components and hooks.
+4. Providers: Specific components like auth-session-provider.tsx manage the context for authentication sessions, centralizing the state logic.
