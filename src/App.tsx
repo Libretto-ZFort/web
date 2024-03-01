@@ -1,57 +1,41 @@
-import {ChakraProvider, Box, theme} from "@chakra-ui/react";
-import "./App.css";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import {AppContextProvider, useAppContext} from "./context/AppContext";
-import ConversationScreen from "./screens/Conversation";
-import routes from "./navigation/routes";
-import ChatGPTScreen from "./screens/ChatGPT";
+import { Button } from '@/src/common/components/ui/button';
+import { SignIn } from '@/src/modules/auth/components/sign-in';
+import { useAuthSession } from '@/src/modules/auth/providers/auth-session-provider';
+import { ChatPage } from '@/src/modules/chat/pages/chat';
+import { TasksPage } from '@/src/modules/tasks/pages/tasks';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
 function App() {
-    const {routeHash} = useAppContext();
+  const { session, supabase } = useAuthSession();
 
-    if (routeHash) {
-        if (routeHash.endsWith("&type=recovery")) {
-            window.location.replace(`/login/${routeHash}`);
-        }
+  if (!session) {
+    return <SignIn />;
+  }
 
-        if (routeHash.startsWith("#error_code=404"))
-            return (
-                <div>
-                    <p>This link has expired</p>
-                    <a href={routes.HOME} style={{cursor: "pointer"}}>
-                        Back to app
-                    </a>
-                </div>
-            );
-    }
-
-    return (
-        <ChakraProvider theme={theme}>
-            <AppContextProvider>
-                <Box bg="gray.100">
-                    <Router>
-                        <Routes>
-                            <Route
-                                key={routes.HOME}
-                                path={routes.HOME}
-                                element={
-                                    <ConversationScreen/>
-                                }
-                            />
-                            <Route
-                                key={routes.CHAT}
-                                path={routes.CHAT}
-                                element={
-                                    <ChatGPTScreen/>
-                                }
-                            />
-                            <Route path="*" element={<p>Not found</p>}/>
-                        </Routes>
-                    </Router>
-                </Box>
-            </AppContextProvider>
-        </ChakraProvider>
-    );
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen pb-14">
+        <header className="py-4 container flex justify-between border-b border-white/10 mb-4">
+          <div className="flex gap-4 items-center">
+            <h1 className="font-bold text-4xl">Workshop</h1>
+            <div className="flex gap-4">
+              <Link to="/">Tasks</Link>
+              <Link to="/chat">Chat</Link>
+            </div>
+          </div>
+          <div>
+            <Button size="sm" onClick={() => supabase?.auth.signOut()}>
+              Logout
+            </Button>
+          </div>
+        </header>
+        <Routes>
+          <Route path="/" element={<TasksPage />} />
+          <Route path="/chat" element={<ChatPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
