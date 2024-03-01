@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Input, Stack, IconButton } from "@chakra-ui/react";
 import { BiSave, BiEdit } from "react-icons/bi";
-import { useAppContext } from "../../context/AppContext.tsx";
+import { useAppContext } from "../../context/AppContext";
 
 export default function NameForm() {
   const { username, setUsername } = useAppContext();

@@ -1,6 +1,6 @@
 import {Alert, Box, Button, Spinner} from "@chakra-ui/react";
 import {useAppContext} from "../../../context/AppContext";
-import Message from "./Message.jsx";
+import Message from "./Message";
 import {v4 as uuidv4} from "uuid";
 
 export default function Messages() {
