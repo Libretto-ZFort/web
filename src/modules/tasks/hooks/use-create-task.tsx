@@ -9,7 +9,7 @@ export type CreateTaskOutDto = {
 };
 
 const createTaskMutation = (body: CreateTaskOutDto) => {
-  return api.post('/tickets/', body);
+  return api.post('/tickets', body);
 };
 
 export function useCreateTask() {
