@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import {BiSend} from "react-icons/bi";
 import {useAppContext} from "../../../context/AppContext";
-import supabase from "../../../services/supabase/SupabaseClient";
+import supabase from "../../../services/supabase/supabase-client";
 
 export default function MessageForm() {
     const {username, country, session, updateMessages} = useAppContext();

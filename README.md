@@ -67,7 +67,7 @@ The architecture of Libretto Web is thoughtfully crafted to foster an organized 
 2. Configuration: Centralized configuration is managed within the config folder, containing critical application settings such as environmental variables in env.js, promoting easy access and scalability.
 3. Context: Global state management is handled through React Context, as seen in AppContext.tsx, allowing for state to be shared across components without prop drilling, ensuring a cleaner and more efficient data flow.
 4. Navigation: The navigation folder, with routes.ts, outlines the routing logic of the application, providing a dedicated space to manage navigational concerns, thereby decoupling it from UI components.
-5. Services: The services directory is segmented into api and supabase, with chat-gpt-api.ts and SupabaseClient.ts appropriately abstracting the API logic and Supabase integration. This separation of concerns ensures that the data-fetching layer is isolated from the UI layer, facilitating easier testing and modifications.
+5. Services: The services directory is segmented into api and supabase, with chat-gpt-api.ts and supabase-client.ts appropriately abstracting the API logic and Supabase integration. This separation of concerns ensures that the data-fetching layer is isolated from the UI layer, facilitating easier testing and modifications.
 6. Utilities: The utils folder encapsulates utility functions and shared logic that can be imported across the application, promoting DRY principles and reusability.
 
 

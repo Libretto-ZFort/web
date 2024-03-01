@@ -1,6 +1,6 @@
 import { Button, Grid, GridItem, ButtonGroup } from "@chakra-ui/react";
 import { FaMusic } from "react-icons/fa";
-import supabase from "../../services/supabase/SupabaseClient";
+import supabase from "../../services/supabase/supabase-client";
 import { useAppContext } from "../../context/AppContext";
 import NameForm from "./NameForm";
 import { Link, useNavigate } from 'react-router-dom';
