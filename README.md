@@ -12,6 +12,7 @@ Libretto Web is a modern, real-time chat application designed to provide users w
 # Configuration
 
 Create a ```.env``` file in the root directory and add ```REACT_APP_SUPABASE_DOMAIN```, ```REACT_APP_SUPABASE_KEY``` and ```REACT_APP_BACKEND_URL```.
+Use ```REACT_APP_SUPABASE_DOMAIN``` and ```REACT_APP_SUPABASE_KEY``` from your Supabase account.
 
 # Supabase DB Schema
 
@@ -21,6 +22,7 @@ Design Decisions
 ![alt text](<images/CleanShot 2024-03-01 at 19.49.42.png>)
 ![alt text](<images/CleanShot 2024-03-01 at 19.50.29.png>)
 ![alt text](<images/CleanShot 2024-03-01 at 19.51.07.png>)
+![alt text](<images/CleanShot 2024-03-01 at 20.51.07.png>)
 
 
 # Technologies Used
