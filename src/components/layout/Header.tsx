@@ -1,10 +1,10 @@
 import { Button, Grid, GridItem, ButtonGroup } from "@chakra-ui/react";
 import { FaMusic } from "react-icons/fa";
-import supabase from "../../supabaseClient.ts";
-import { useAppContext } from "../../context/AppContext.tsx";
-import NameForm from "./NameForm.tsx";
+import supabase from "../../services/supabase/SupabaseClient";
+import { useAppContext } from "../../context/AppContext";
+import NameForm from "./NameForm";
 import { Link, useNavigate } from 'react-router-dom';
-import routes from "../../navigation/routes.ts";
+import routes from "../../navigation/routes";
 
 export default function Header() {
   const { username, setUsername, randomUsername, session } = useAppContext();

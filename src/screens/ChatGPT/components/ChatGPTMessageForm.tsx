@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Input, Stack, IconButton, useToast, Box, Container, Text, VStack} from '@chakra-ui/react';
 import {BiSend} from 'react-icons/bi';
-import {postMessage} from 'src/services/api/chat-gpt-api.ts';
+import {postMessage} from 'src/services/api/chat-gpt-api';
 
 export default function ChatGPTMessageForm() {
     const [height, setHeight] = useState(window.innerHeight - 310);

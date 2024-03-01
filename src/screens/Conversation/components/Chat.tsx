@@ -1,6 +1,6 @@
 import {Badge, Box, Container} from "@chakra-ui/react";
 import React, {useEffect, useState} from "react";
-import {useAppContext} from "../../../context/AppContext.tsx";
+import {useAppContext} from "../../../context/AppContext";
 import Messages from "./Messages.jsx";
 import {BsChevronDoubleDown} from "react-icons/bs";
 

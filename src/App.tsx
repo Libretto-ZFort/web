@@ -3,7 +3,7 @@ import "./App.css";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import {AppContextProvider, useAppContext} from "./context/AppContext";
 import ConversationScreen from "./screens/Conversation";
-import routes from "./navigation/routes.ts";
+import routes from "./navigation/routes";
 import ChatGPTScreen from "./screens/ChatGPT";
 
 function App() {
