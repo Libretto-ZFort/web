@@ -4,15 +4,16 @@ import Chat from "./components/Chat.tsx";
 import MessageForm from "./components/MessageForm.tsx";
 import Footer from "../../components/layout/Footer.tsx";
 
-interface Props {}
+interface Props {
+}
 
 const ConversationScreen: React.FC<Props> = () => {
     return (
         <>
-            <Header />
-            <Chat />
-            <MessageForm />
-            <Footer />
+            <Header/>
+            <Chat/>
+            <MessageForm/>
+            <Footer/>
         </>
     );
 };

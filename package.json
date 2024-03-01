@@ -15,7 +15,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@supabase/supabase-js": "^2.39.0",
-    "dayjs": "^1.11.10",
+    "axios": "^1.6.7",
     "framer-motion": "^10.16.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -26,17 +26,17 @@
   "devDependencies": {
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "@types/uuid": "9.0.8",
     "@vitejs/plugin-react": "^4.2.1",
     "typescript": "^5.3.3",
-    "@types/uuid": "9.0.8",
     "vite": "^5.0.5",
-    "vite-plugin-checker": "^0.6.4",
     "vite-tsconfig-paths": "^4.3.1"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "mock-server": "npx json-server data/messages.json --port 3012",
     "check-types": "tsc"
   },
   "browserslist": {

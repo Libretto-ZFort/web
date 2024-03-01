@@ -19,7 +19,6 @@ const AppContextProvider = ({ children }) => {
   const [isInitialLoad, setIsInitialLoad] = useState(false);
 
   useEffect(() => {
-    // Effect to scroll to bottom on initial message load
     if (isInitialLoad) {
       setIsInitialLoad(false);
       scrollToBottom();
@@ -66,7 +65,7 @@ const AppContextProvider = ({ children }) => {
       initializeUser(session);
     });
 
-    getMessagesAndSubscribe();
+    updateMessages();
 
     const storedCountryCode = localStorage.getItem("countryCode");
     if (storedCountryCode && storedCountryCode !== "undefined")
@@ -80,14 +79,7 @@ const AppContextProvider = ({ children }) => {
       initializeUser(session);
     });
 
-    // const { hash, pathname } = window.location;
-    // if (hash && pathname === "/") {
-    //   console.log("hash", hash);
-    //   setRouteHash(hash);
-    // }
-
     return () => {
-      // Remove supabase channel subscription by useEffect unmount
       if (myChannel) {
         supabase.removeChannel(myChannel);
       }
@@ -106,12 +98,6 @@ const AppContextProvider = ({ children }) => {
     }
   }, [newIncomingMessageTrigger]);
 
-  const handleNewMessage = (payload) => {
-    setMessages((prevMessages) => [payload.new, ...prevMessages]);
-    //* needed to trigger react state because I need access to the username state
-    setNewIncomingMessageTrigger(payload.new);
-  };
-
   const getInitialMessages = async () => {
     const { data, error } = await supabase
       .from("messages")
@@ -128,10 +114,9 @@ const AppContextProvider = ({ children }) => {
 
     setIsInitialLoad(true);
     setMessages(data);
-    // scrollToBottom(); // not sure why this stopped working, meanwhile using useEffect that's listening to messages and isInitialLoad state.
   };
 
-  const getMessagesAndSubscribe = async () => {
+  const updateMessages = async () => {
     setError("");
 
     await getInitialMessages();
@@ -175,7 +160,7 @@ const AppContextProvider = ({ children }) => {
         messages,
         loadingInitial,
         error,
-        getMessagesAndSubscribe,
+        updateMessages,
         username,
         setUsername,
         randomUsername,

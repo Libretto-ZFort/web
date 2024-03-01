@@ -23,7 +23,11 @@
     "baseUrl": "./"
   },
   "include": [
-    "src",
+    "src"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

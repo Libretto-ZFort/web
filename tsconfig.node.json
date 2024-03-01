@@ -8,5 +8,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./"
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "vite.config.ts"
+  ]
 }
