@@ -13,12 +13,6 @@ Libretto Web is a modern, real-time chat application designed to provide users w
 
 Create a ```.env``` file in the root directory and add ```REACT_APP_SUPABASE_DOMAIN```, ```REACT_APP_SUPABASE_KEY``` and ```REACT_APP_BACKEND_URL```.
 
-```js
-export const BASE_URL_API = '< YOUR BASE API URL HERE >';
-export const VITE_SUPABASE_KEY = '< YOUR SUPABASE KEY HERE >';
-export const VITE_SUPABASE_URL = '< YOUR SUPABASE URL HERE >';
-```
-
 # Supabase DB Schema
 
 Our database is structured to support the intricate features of our application, with a schema that facilitates real-time updates and user-specific task management.
