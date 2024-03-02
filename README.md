@@ -31,7 +31,7 @@ Our technical stack is curated to provide a seamless, full-stack development exp
 
 1. React: The foundation of our front-end, React brings to life our user interface with agility and sophistication.
 2. Supabase: A versatile framework that lays the groundwork for our backend processes, including database and real-time functionality, without the need for a separate backend service.
-3. Shadcn with Radix UI: Our chosen UI framework, designed for rapid, clean, and straightforward UI construction.
+3. Radix UI: Our chosen UI framework, designed for rapid, clean, and straightforward UI construction.
 4. Tailwind CSS: This utility-first CSS framework empowers us to prototype with speed and efficiency.
 5. Luxon: A library that elegantly handles and formats dates.
 6. React Hook Form: This framework simplifies form creation, making it a breeze to set up and manage form states.
